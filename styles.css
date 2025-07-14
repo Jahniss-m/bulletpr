@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO POTENTE */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('ruta-a-la-foto.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: #e94560;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px #e94560;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { text-shadow: 0 0 15px #e94560; }
+  50% { text-shadow: 0 0 30px #e94560; }
+}
+
+/* SECCIONES */
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeIn 1.2s ease;
+}
+
+/* TITULARES */
+h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  color: #ff4b5c;
+  margin-bottom: 1rem;
+  border-left: 5px solid #ff4b5c;
+  padding-left: 15px;
+}
+
+/* PÁRRAFOS */
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+/* PROYECTOS */
+.proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.proyecto {
+  background-color: #111;
+  border: 1px solid #ff4b5c;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.proyecto:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 20px #ff4b5c33;
+}
+
+.proyecto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #0a0a0a;
+  border-top: 2px dashed #e94560;
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: #e94560;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.cta a:hover {
+  transform: scale(1.1);
+  background-color: #ff6f80;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.cta-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.9em 2em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #E50914;
+  border-radius: 50px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.3) 0%, transparent 60%);
+  animation: pulse-neon 2.5s infinite;
+  z-index: 0;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+}
+
+.cta-button span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Neon pulsing background */
+@keyframes pulse-neon {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.sobre-bulletpr {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.sobre-bulletpr h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #E50914;
+}
+
+.sobre-bulletpr p {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  filter: grayscale(70%);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+  box-shadow: 0 0 30px rgba(229, 9, 20, 0.4);
+}
+
+/* Opcional: darle a una imagen más altura para romper la simetría */
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+.contacto {
+  background-color: #0d0d0d;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.contacto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #E50914;
+}
+
+.contacto p {
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.social-link:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.instagram {
+  background: linear-gradient(45deg, #e1306c, #fd1d1d, #f56040);
+  color: white;
+}
+
+.spotify {
+  background-color: #1DB954;
+  color: #000;
+}
+
+.apple {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.cta-final {
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.cta-titulo-final {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #E50914;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cta-texto-final {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 2.5rem;
+}
+
+.cta-boton-final {
+  display: inline-block;
+  position: relative;
+  padding: 1rem 2.2rem;
+  background-color: #E50914;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-boton-final:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(229, 9, 20, 0.8);
+}
